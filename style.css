@@ -84,3 +84,13 @@ body{color:#fff;background:#111}
   .container{margin:-20px 12px 40px}
   .brand h2{font-size:1.25rem}
 }
+
+.small-btn{background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:6px;cursor:pointer}
+.small-btn:hover{background:rgba(255,255,255,0.03)}
+
+.image-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1200}
+.image-modal.open{display:flex}
+.image-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.7)}
+.image-modal-content{position:relative;z-index:10;max-width:90%;max-height:90%;background:transparent;padding:10px;border-radius:8px}
+.image-modal-content img{width:100%;height:auto;border-radius:6px;display:block}
+.modal-close{position:absolute;right:8px;top:8px;background:rgba(0,0,0,0.6);color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer}

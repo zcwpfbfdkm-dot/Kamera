@@ -128,9 +128,21 @@
       </div>
     </section>
 
+    <div class="image-control">
+      <button id="showImageBtn" class="small-btn">Bild anzeigen</button>
+    </div>
+
     <footer class="footer">
       <p>© Kameras — eine Übersicht</p>
     </footer>
+
+    <div id="imageModal" class="image-modal" aria-hidden="true">
+      <div class="image-modal-backdrop"></div>
+      <div class="image-modal-content" role="dialog" aria-modal="true">
+        <button class="modal-close" id="modalClose">✕</button>
+        <img src="https://images.unsplash.com/photo-1505740106531-4243f3831f0e?auto=format&fit=crop&w=1400&q=80" alt="Große Kamera">
+      </div>
+    </div>
 
     <script>
       const button = document.getElementById('readMoreButton');
@@ -145,6 +157,36 @@
           content.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+
+      // Bild-Anzeige mit Passwort
+      const SHOW_PASSWORD = 'kamera2026'; // Ändere hier das Passwort nach Bedarf
+      const showBtn = document.getElementById('showImageBtn');
+      const modal = document.getElementById('imageModal');
+      const modalClose = document.getElementById('modalClose');
+      const backdrop = document.querySelector('.image-modal-backdrop');
+
+      function openModal(){
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+      }
+      function closeModal(){
+        modal.setAttribute('aria-hidden','true');
+        modal.classList.remove('open');
+      }
+
+      showBtn.addEventListener('click', () => {
+        const pw = prompt('Bitte Passwort eingeben:');
+        if(pw === null) return; // Abbrechen
+        if(pw === SHOW_PASSWORD){
+          openModal();
+        } else {
+          alert('Falsches Passwort');
+        }
+      });
+
+      modalClose.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
     </script>
   </body>
 </html>
