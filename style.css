@@ -91,6 +91,6 @@ body{color:#fff;background:#111}
 .image-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1200}
 .image-modal.open{display:flex}
 .image-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.7)}
-.image-modal-content{position:relative;z-index:10;max-width:90%;max-height:90%;background:transparent;padding:10px;border-radius:8px}
-.image-modal-content img{width:100%;height:auto;border-radius:6px;display:block}
+.image-modal-content{position:relative;z-index:10;max-width:calc(100vw - 40px);max-height:calc(100vh - 40px);background:transparent;padding:10px;border-radius:8px}
+.image-modal-content img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:6px;display:block}
 .modal-close{position:absolute;right:8px;top:8px;background:rgba(0,0,0,0.6);color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer}
