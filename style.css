@@ -8,6 +8,7 @@ html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Seg
 body{color:#fff;background:#111}
 
 .hero{
+  position:relative;
   height:45vh;
   min-height:260px;
   background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('https://images.unsplash.com/photo-1519183071298-a2962be54a79?auto=format&fit=crop&w=2000&q=80');
@@ -16,8 +17,24 @@ body{color:#fff;background:#111}
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
 }
-.overlay{width:100%;text-align:center;padding:4rem 1rem}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.95) 100%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.95) 100%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+}
+.overlay{position:relative;width:100%;text-align:center;padding:4rem 1rem}
 .site-title{
   font-weight:800;
   letter-spacing:1px;
