@@ -58,8 +58,93 @@
       </section>
     </main>
 
+    <div class="read-more-wrap">
+      <button class="read-more-button" id="readMoreButton" aria-expanded="false">weiter lesen</button>
+    </div>
+
+    <section class="more-content" id="moreContent" aria-hidden="true">
+      <div class="more-content-inner">
+        <h2>Die Entstehung der Kamera und die großen Marken</h2>
+        <p>
+          Die Geschichte der Kamera ist eng mit der Entwicklung der Optik und der
+          chemischen Fotografie verbunden. Bereits im 16. Jahrhundert nutzten
+          Gelehrte die Kamera Obscura als Werkzeug zur Projektion von Bildern. Der
+          entscheidende Fortschritt gelang mit der Erfindung lichtempfindlicher
+          Schichten, die erstmals dauerhafte Bilder ermöglichten. In Europa und den
+          USA arbeiteten Tüftler daran, die Bildqualität, die Belichtungszeit und die
+          Kameragehäuse zu verbessern. Aus diesen frühen Experimenten entstand im
+          19. Jahrhundert eine solide Grundlage für die moderne Fotografie.
+        </p>
+        <p>
+          Hasselblad, Sony, Nikon und Fujifilm stehen heute für verschiedene Aspekte
+          dieser langen Entwicklung. Hasselblad hat die Mittelformatkamera zu einer
+          professionellen Ikone gemacht und wird noch immer mit höchster Qualität
+          und technischem Prestige verbunden. Die Marke ist ein Beispiel dafür, wie
+          anspruchsvolle Konstruktion mit exzellenten Objektiven und herausragender
+          Bildqualität verbunden werden kann. Ihre Bedeutung zeigt sich in der
+          Bekanntheit als Ausrüster für Raumfahrtmissionen und exklusive
+          Fotoproduktionen.
+        </p>
+        <p>
+          Sony hingegen brachte die Kamera in das digitale Zeitalter und setzte mit
+          spiegellosen Systemen neue Standards bei Sensorleistung und Autofokus. Die
+          Marke gilt als Innovationsführer, weil sie neue Bildstandards definiert und
+          fortschrittliche Videofunktionen in leistungsstarke Kameras integriert. Sony
+          verbindet moderne Elektronik mit klassischer Kameratechnik und macht die
+          Fotografie für Profis und ambitionierte Enthusiasten gleichermaßen attraktiv.
+        </p>
+        <p>
+          Nikon ist ein Synonym für Präzision und Zuverlässigkeit. Die lange Geschichte
+          der Marke als Hersteller optischer Instrumente spiegelt sich in den robusten
+          Kameras und hochwertigen Objektiven wider. Nikon war einmal vor allem für
+          Spiegelreflexkameras bekannt, doch auch das spiegellose System hat sich als
+          starker Vertreter etabliert. Für viele Fotografen bleibt Nikon eine
+          bewährte Wahl, weil die Marke Qualität, Ergonomie und leistungsfähige
+          Technik in einem vertrauten Design vereint.
+        </p>
+        <p>
+          Fujifilm hat sich von einem Filmhersteller zum vielseitigen Kamerakonzern
+          gewandelt. Die X-Serie steht für kreative Fotografie, intuitive Bedienung
+          und starke Bildstile. Fujifilm verbindet analoges Know-how mit digitalen
+          Möglichkeiten und erhält dadurch eine einzigartige Identität. Die Marke
+          punktet bei Nutzern, die Wert auf Gestaltung, Portabilität und den besonderen
+          Look legen. Durch die Filmsimulationen gelingt es Fujifilm, die Tradition der
+          Fotografie mit zeitgemäßer Technik in Einklang zu bringen.
+        </p>
+        <p>
+          Zusammen bilden diese Marken ein Panorama moderner Kameratechnik. Die
+          Entstehung der Kamera ist eine Geschichte von kontinuierlicher Innovation,
+          technologischen Durchbrüchen und der Suche nach immer besserer Bildqualität.
+          Zu den zentralen Momenten gehören die ersten lichtdichten Gehäuse, die
+          Entwicklung lichtempfindlicher Materialien, die Perfektionierung von Optik
+          und Verschluss sowie der Übergang zur digitalen Bildverarbeitung. Die vier
+          Marken stehen für unterschiedliche Facetten dieser Entwicklung: von der
+          handwerklichen Perfektion über digitale Innovation bis zum kreativen Stil.
+          Wenn man sich heute mit Kameras beschäftigt, trifft man auf einen Markt,
+          der zugleich historisch gewachsen und technisch hochmodern ist. Die großen
+          Namen sind mehr als Hersteller, sie sind Vertreter einer langen Tradition,
+          die von den Ursprüngen der Fotografie bis zu den aktuellen Trends reicht.
+        </p>
+      </div>
+    </section>
+
     <footer class="footer">
       <p>© Kameras — eine Übersicht</p>
     </footer>
+
+    <script>
+      const button = document.getElementById('readMoreButton');
+      const content = document.getElementById('moreContent');
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        content.setAttribute('aria-hidden', String(expanded));
+        content.classList.toggle('visible');
+        button.textContent = expanded ? 'weiter lesen' : 'weniger anzeigen';
+        if (!expanded) {
+          content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    </script>
   </body>
 </html>
